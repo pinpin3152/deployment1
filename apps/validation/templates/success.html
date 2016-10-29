@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Result Page!</title>
+    </head>
+    <body>
+        <h4>Result!</h4> <a href="/">Home</a>
+        {% if messages %}
+           <ul class="messages">
+              {% for message in messages %}
+                 <p>{{ message }}</p>
+              {% endfor %}
+           </ul>
+        {% endif %}
+
+        <h2>Emails Added</h2>
+        <table border="solid 1px black">
+          <thead>
+            <tr>
+              <td>Emails</td>
+              <td>Create Date</td>
+            </tr>
+          </thead>
+          <tbody>
+            {%for email in all_emails%}
+                <tr>
+                  <td>{{email.email}}</td>
+                  <td>{{email.created_at}}</td>
+                </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+    </body>
+</html>
